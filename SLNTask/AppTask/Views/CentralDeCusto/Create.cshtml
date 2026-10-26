@@ -1,0 +1,35 @@
+﻿@model AppTask.Models.CentralDeCusto
+
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<h1>Criar Central de Custo</h1>
+
+
+<h4>CentralDeCusto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form action="/CentralDeCusto/Create" method="post">
+            @Html.AntiForgeryToken()
+            <div class="form-group mb-3">
+                <label for="NomeCentral" class="control-label">Nome Central</label>
+                <input type="text" name="NomeCentral" id="NomeCentral" class="form-control" />
+            </div>
+            <div class="form-group mb-3">
+                <input type="submit" value="Criar" class="btn btn-primary" />
+                <a href="/CentralDeCusto/Index" class="btn btn-secondary">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
